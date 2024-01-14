@@ -1,10 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-char space[3][3] = {{'0', '1', '2'}, {'3', '4', '5'}, {'6', '7', '8'}};
+char space[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
 int choice;
 int row;
 int column;
+
+void display_board()
+{
+    cout << endl;
+    cout << "     |    |    " << endl;
+    cout << "  " << space[0][0] << "  |  " << space[0][1] << " |  " << space[0][2] << endl;
+    cout << "_____|____|____" << endl;
+    cout << "     |    |    " << endl;
+    cout << "  " << space[1][0] << "  |  " << space[1][1] << " |  " << space[1][2] << endl;
+    cout << "_____|____|____" << endl;
+    cout << "     |    |    " << endl;
+    cout << "  " << space[2][0] << "  |  " << space[2][1] << " |  " << space[2][2] << endl;
+    cout << "     |    |    " << endl;
+    cout << endl;
+}
 void InputFunction()
 {
 
@@ -17,74 +32,63 @@ void InputFunction()
     getline(cin, n2);
     cout << endl;
     cout << n1 << " is the first player so he/she will play first.\n";
-    cout << n2 << " is the second player so he/she will play second. \n";
-    cout << "Lets begin the match ............  ";
-    cout << endl
-         << endl
-         << endl;
-    cout << "     |    |    " << endl;
-    cout << "  " << space[0][0] << "  |  " << space[0][1] << " |  " << space[0][2] << endl;
-    cout << "_____|____|____" << endl;
-    cout << "     |    |    " << endl;
-    cout << "  " << space[1][0] << "  |  " << space[1][1] << " |  " << space[1][2] << endl;
-    cout << "_____|____|____" << endl;
-    cout << "     |    |    " << endl;
-    cout << "  " << space[2][0] << "  |  " << space[2][1] << " |  " << space[2][2] << endl;
-    cout << "     |    |    " << endl;
-    cout << endl;
+    cout << n2 << " is the second player so he/she will play second. \n\n";
+    cout << "Lets begin the match ............  \n";
 
-    cout << "Player 1 turn [x] .... "<<endl;
-    cout<<"Input you choice : "; 
+    cout << "Player 1 turn [x] .... \n"
+         << endl;
+    cout << "Input you choice : ";
     cin >> choice;
-    cout<<endl; 
+    cout << endl;
 
     switch (choice)
     {
-    case 0:
-        space[0][0] = 'x';
-        break;
     case 1:
-        space[0][1] = 'x';
+        row=0;
+        column=0; 
         break;
     case 2:
-        space[0][2] = 'x';
-    case 3:
-        space[1][0] = 'x';
+        row=0;
+        column=1; 
         break;
+    case 3:
+        row=0;
+        column=2; 
+        break; 
     case 4:
-        space[1][1] = 'x';
+        row=1;
+        column=0; 
         break;
     case 5:
-        space[1][2] = 'x';
+        row=1;
+        column=1; 
+        break;
     case 6:
+        row=1;
+        column=2; 
+        break; 
+    case 7:
         space[2][0] = 'x';
         break;
-    case 7:
-        space[2][1] = 'x';
-        break;
     case 8:
+        row=2;
+        column=0; 
+        break;
+    case 9:
         space[2][2] = 'x';
 
     default:
         break;
     }
-
-    cout << endl
-         << endl
-         << endl;
-    cout << "     |    |    " << endl;
-    cout << "  " << space[0][0] << "  |  " << space[0][1] << " |  " << space[0][2] << endl;
-    cout << "_____|____|____" << endl;
-    cout << "     |    |    " << endl;
-    cout << "  " << space[1][0] << "  |  " << space[1][1] << " |  " << space[1][2] << endl;
-    cout << "_____|____|____" << endl;
-    cout << "     |    |    " << endl;
-    cout << "  " << space[2][0] << "  |  " << space[2][1] << " |  " << space[2][2] << endl;
-    cout << "     |    |    " << endl;
-    cout << endl;
 }
 
 int main()
 {
-    InputFunction(); 
+    cout << "\nInitial stage : \n";
+    display_board();
+
+    InputFunction();
+
+    cout << "In playing stage : \n";
+    display_board();
 }

@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std; 
-void reverseString(int* arr, int n)
+void reverseString(char arr[], int n)
 {
-    int arrver[n]; 
+    char arrver[n]; 
     for(int i=0; i<n; i++)
     {
-        arrver[i] = arr[n-1]; 
+        arrver[i] = arr[n-i-1]; 
     }
     cout<<"The reverse string : ";  
     for(int i=0; i<n; i++)
@@ -20,7 +20,7 @@ int main()
     cout<<"Enter the number of iteration: "; 
     cin>>n; 
 
-    int arr[n]; 
+    char arr[n]; 
     for(int i=0; i<n; i++)
     {
         cin>>arr[i];

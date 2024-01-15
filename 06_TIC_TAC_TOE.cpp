@@ -5,6 +5,7 @@ char space[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
 int choice;
 int row;
 int column;
+char turn = 'X';
 
 void display_board()
 {
@@ -35,11 +36,23 @@ void InputFunction()
     cout << n2 << " is the second player so he/she will play second. \n\n";
     cout << "Lets begin the match ............  \n";
 
-    cout << "Player 1 turn [x] .... \n"
-         << endl;
-    cout << "Input you choice : ";
+    // Players turn : -----
+
+    if(turn == 'X')
+    {
+        cout<<"Player 1 " << n1 << " turn."; 
+    }
+    if(turn == 'O')
+    {
+        cout<<"Player 2 "<<n2 << " turn."; 
+    }
+
+    // Players choice to play the game and where to fill their "O" or "X". 
+
     cin >> choice;
     cout << endl;
+
+    // choice based filling code
 
     switch (choice)
     {
@@ -68,18 +81,23 @@ void InputFunction()
         column=2; 
         break; 
     case 7:
-        space[2][0] = 'x';
+        row = 2; 
+        column = 0; 
         break;
     case 8:
         row=2;
-        column=0; 
+        column=1; 
         break;
     case 9:
-        space[2][2] = 'x';
+        row = 2; 
+        column = 2; 
+        break; 
 
     default:
         break;
     }
+
+    
 }
 
 int main()

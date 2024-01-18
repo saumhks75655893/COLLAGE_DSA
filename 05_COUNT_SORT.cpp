@@ -36,11 +36,16 @@ void countSort(int arr[], int n)
     {
         count[arr[i]] = count[arr[i]] + 1;
     }
+    for (i = 0; i <= max; i++)
+    {
+        cout<<count[i]<<" "; 
+    }
+    cout<<endl; 
 
     i = 0;   // counter for count array
     j = 0;  // counter for given array "arr"
 
-    while (i <= count[max])
+    while (i <= max)
     {
         if (count[i] > 0)
         {
@@ -56,13 +61,20 @@ void countSort(int arr[], int n)
 }
 int main()
 {
-    int arr[] = {1, 3, 2, 3, 4, 1, 6, 4, 3};
-    int size = sizeof(arr) / sizeof(arr[0]);
+    int n; 
+    cout<<"Enter the size of the array : "; 
+    cin>>n; 
+    int arr[n]; 
+    cout<<"Enter the elements of the array : "; 
+    for(int i=0; i<n; i++)
+    {
+        cin>>arr[i];
+    }
     cout << "Unsorted array is : ";
-    printArray(arr, size);
-    countSort(arr, size);
+    printArray(arr, n);
+    countSort(arr, n);
     cout<<"Sorted array is  : "; 
-    printArray(arr, size);
+    printArray(arr, n);
 
     return 0; 
 }
